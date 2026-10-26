@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Doorlist//Doorlist Sessions//ES
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:doorlist-sessions-20261121@doorlist.local
+DTSTAMP:20261026T000000Z
+DTSTART:20261122T000000Z
+SUMMARY:Doorlist Sessions
+LOCATION:Teatro ABC\, Bogotá\, Colombia
+DESCRIPTION:Doorlist Sessions en Teatro ABC. Hora de Colombia: 7:00 p. m.
+END:VEVENT
+END:VCALENDAR
