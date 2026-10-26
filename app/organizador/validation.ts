@@ -16,6 +16,9 @@ export function eventValues(form: FormData) {
   if (!title || !location || !Number.isFinite(startsAt.getTime()) || !["draft", "published"].includes(status)) {
     throw new Error("Completa el nombre, el lugar, la fecha y el estado del evento.");
   }
+  if (startsAt < new Date(earliestEventDateTime())) {
+    throw new Error("La fecha del evento no puede ser anterior a hoy. Elige hoy o un día posterior.");
+  }
   return { title, location, description: String(form.get("description") ?? "").trim(),
     starts_at: startsAt.toISOString(), status, capacity: positiveInteger(form.get("capacity"), true) };
 }
@@ -35,4 +38,10 @@ export function checkCapacity(limit: number | null, total: number) {
 export function localDateTime(value: string) {
   const date = new Date(value);
   return new Date(date.getTime() - date.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+}
+
+export function earliestEventDateTime() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return localDateTime(today.toISOString());
 }

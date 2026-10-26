@@ -6,6 +6,7 @@ Before making a decision or requesting confirmation about product, design, or im
 
 - [PRODUCT.md](docs/PRODUCT.md): product purpose, scope, capabilities, constraints, and open decisions.
 - [DESIGN.md](docs/DESIGN.md): visual identity, typography, composition, interaction, and accessibility.
+- [COMMITS.md](docs/COMMITS.md): commit messages, staging scope, and authorized push workflow.
 - Architecture, framework, and other documents added in the future.
 
 Reuse documented decisions without requesting confirmation again. Ask the owner when missing information would materially change the outcome, or when contradictions cannot be resolved using the owner's current instructions and the code. Do not treat assumptions as confirmed decisions.

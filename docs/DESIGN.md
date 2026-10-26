@@ -25,3 +25,15 @@ Use controls at least 44 px tall, visible focus indicators, a skip-to-content li
 ## As the Project Grows
 
 Reuse the tokens and event-details, button, and link patterns. Extract components when a second screen needs them. Keep `public/events/doorlist-sessions.ics` synchronized with the event details; when real events are connected, generate calendar files from the same data source. Do not make this session's poster a constraint for every event type.
+
+## Organizer Workspace
+
+The public header includes a visible “Organizadores” link on desktop and mobile. The organizer is an operational surface: use compact headings, clear actions, and the existing color and font tokens. Implement its layout and controls with Tailwind utilities rather than a separate organizer stylesheet.
+
+Show owned events as read-only rows with event details, status, each ticket type's capacity followed by its name (for example, “20 VIP · 20 General”), assigned capacity, and an explicit “Editar” action. On mobile, stack each row's information and keep the ticket capacities and names visible. Empty ticket collections read “Sin entradas”.
+
+Open only one event editor at a time. Keep editors closed initially and after saving an existing event. Creating an event without a total capacity also closes its editor. When creating an event with a total capacity, keep its saved editor open and reveal ticket creation so the organizer can continue immediately or close it without adding tickets. On desktop, place event details and ticket management side by side; stack them on smaller screens. Existing ticket types are read-only rows until explicitly edited, with at most one ticket edit form open. Keep creation controls separate from existing records.
+
+New event forms always start blank. Clear a ticket creation form after a successful write, and preserve entered values on failure. Show capacity feedback beside the relevant form, including assigned and unassigned counts, an inline over-limit message, and recovery instructions when the event is fully allocated. Use live announcements for outcomes and return keyboard focus to a useful control after saving or closing an editor. Keep controls at least 44 px tall.
+
+In event rows, display each ticket type as a separate compact label with its count emphasized and its name allowed to wrap. Give the date/time input a full row within the event form, with a separate accessible hint. Event dates must be today or later in the device's timezone; the current day's earlier times are allowed. Enforce the day boundary in both the native selector and form payload validation.

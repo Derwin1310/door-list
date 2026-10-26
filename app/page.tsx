@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <a className="skip-link" href="#contenido">Saltar al contenido</a>
-      <header className="site-header page-width">
+      <header className="page-width flex min-h-28 flex-wrap items-center justify-between gap-4 border-b border-[var(--line)] py-5 sm:py-0">
         <Link className="wordmark" href="/" aria-label="Doorlist, inicio">
           <svg width="28" height="34" viewBox="0 0 28 34" fill="none" aria-hidden="true">
             <path d="M3 31V14a11 11 0 0 1 22 0v17H3Z" stroke="currentColor" strokeWidth="3" />
@@ -25,8 +25,9 @@ export default function Home() {
           </svg>
           doorlist<span className="brand-dot">.</span>
         </Link>
-        <nav aria-label="Navegación principal">
+        <nav aria-label="Navegación principal" className="flex w-full flex-wrap items-center justify-between gap-3 text-sm sm:w-auto sm:justify-end sm:gap-6">
           <a className="nav-link" href="#evento">El evento</a>
+          <Link className="inline-flex min-h-11 items-center px-2 font-bold text-[var(--accent)] hover:underline" href="/organizador">Organizadores</Link>
           <a className="nav-action" href="#registro">Quiero ir <Arrow /></a>
         </nav>
       </header>
@@ -90,7 +91,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="site-footer page-width"><Link className="footer-brand" href="/">doorlist.</Link><Link className="text-link" href="/organizador">Organizadores</Link><p>Los buenos planes se viven.</p><span>Bogotá, Colombia</span></footer>
+      <footer className="site-footer page-width"><Link className="footer-brand" href="/">doorlist.</Link><p>Los buenos planes se viven.</p><span>Bogotá, Colombia</span></footer>
     </>
   );
 }
